@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curioflash | Datos insólitos y descubrimientos diarios</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CONFIGURACIÓN GOOGLE ADSENSE (Descomenta y pon tu ID cuando lo tengas) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script> -->
+
+    <style>
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+        }
+        .ad-container {
+            background-color: #fafafa;
+            border: 1px dashed #cbd5e1;
+            color: #64748b;
+            text-align: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased flex flex-col min-h-screen justify-between">
+
+    <!-- ANUNCIO SUPERIOR (Leaderboard) -->
+    <div class="max-w-2xl mx-auto px-4 my-2 w-full">
+        <div class="ad-container rounded-xl p-3 text-xs uppercase tracking-wider bg-slate-800 border-slate-700 text-slate-400">
+            <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+            [ Espacio Publicitario Google AdSense - Superior ]
+        </div>
+    </div>
+
+    <!-- Cabecera con el nombre Curioflash -->
+    <header class="py-6 text-center">
+        <h1 class="text-3xl md:text-4xl font-black tracking-tight uppercase bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
+            Curioflash
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">Conoce algo alucinante cada vez que entres</p>
+    </header>
+
+    <!-- Contenido Principal Dinámico y Adictivo -->
+    <main class="max-w-lg mx-auto px-4 py-4 flex-grow w-full flex flex-col justify-center">
+        
+        <!-- Tarjeta Interactiva de Curiosidad -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-6 md:p-8 card-shadow space-y-6 relative overflow-hidden transition-all duration-300" id="card-curiosidad">
+            
+            <div class="flex justify-between items-center">
+                <span id="categoria-tag" class="text-xs font-bold uppercase tracking-wider bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20">Ciencia</span>
+                <span id="contador-id" class="text-xs text-slate-500 font-mono">#01</span>
+            </div>
+
+            <div class="space-y-3 min-h-[140px] flex flex-col justify-center">
+                <h2 id="titulo-curiosidad" class="text-xl md:text-2xl font-bold text-white leading-snug">
+                    Cargando dato fascinante...
+                </h2>
+                <p id="texto-curiosidad" class="text-slate-300 text-sm md:text-base leading-relaxed">
+                    Un momento mientras conectamos con el archivo de conocimientos insólitos.
+                </p>
+            </div>
+
+            <!-- Botón de Siguiente (Alto factor de adicción / retención) -->
+            <button onclick="siguienteCuriosidad()" class="w-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:opacity-95 text-white font-bold py-4 rounded-2xl text-base transition transform active:scale-98 shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2">
+                <span>Siguiente Curiosidad ⚡</span>
+            </button>
+        </div>
+
+        <!-- ANUNCIO INTERMEDIO (In-feed altamente integrado) -->
+        <div class="my-6">
+            <div class="ad-container rounded-2xl p-4 text-xs uppercase tracking-wider bg-slate-800 border-slate-700 text-slate-400">
+                <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+                [ Espacio Publicitario Google AdSense - Bloque Intermedio ]
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Pie de página con el nombre Curioflash -->
+    <footer class="py-6 text-center text-xs text-slate-500 border-t border-slate-800">
+        <p>&copy; 2026 Curioflash. Contenido autogenerado y actualizado en tiempo real.</p>
+    </footer>
+
+    <!-- LÓGICA AUTÓNOMA INFINITA -->
+    <script>
+        const baseDeDatosCuriosidades = [
+            {
+                categoria: "Naturaleza",
+                titulo: "Los cuervos tienen memoria fotográfica y rencor familiar",
+                texto: "Un estudio demostró que los cuervos pueden reconocer rostros humanos enfadados durante años y enseñan a sus crías qué personas son 'peligrosas'."
+            },
+            {
+                categoria: "Espacio",
+                titulo: "Lluvia de diamantes en Saturno y Júpiter",
+                texto: "Debido a la presión atmosférica extrema y las tormentas de rayos, el metano se convierte en carbono puro y caen auténticas tormentas de diamantes sólidos."
+            },
+            {
+                categoria: "Cuerpo Humano",
+                titulo: "Tu cerebro genera suficiente electricidad para encender una bombilla",
+                texto: "Mientras estás despierto, tu cerebro produce entre 12 y 25 vatios de electricidad, energía más que suficiente para alimentar una pequeña bombilla LED."
+            },
+            {
+                categoria: "Historia",
+                titulo: "Cleopatra vivió más cerca temporalmente de la llegada a la Luna que de la construcción de las Pirámides",
+                texto: "La construcción de la Gran Pirámide de Guiza ocurrió alrededor del 2500 a.C., mientras que Cleopatra vivió cerca del 30 a.C., y el Apolo 11 aterrizó en 1969."
+            },
+            {
+                categoria: "Tecnología",
+                titulo: "El código fuente original del Apolo 11 pesaba menos que una foto actual",
+                texto: "El software de navegación que guió al hombre a la Luna cabía en apenas 72 KB de memoria ROM. Hoy un simple meme en tu móvil ocupa 10 veces más."
+            },
+            {
+                categoria: "Curiosidades",
+                titulo: "Los flamencos no nacen de color rosa",
+                texto: "Al nacer tienen plumas de color grisáceo o blanco. Su icónico tono rosado se debe exclusivamente a los carotenoides que ingieren al comer algas y pequeños crustáceos."
+            },
+            {
+                categoria: "Océanos",
+                titulo: "Hay más árboles en la Tierra que estrellas en nuestra galaxia",
+                texto: "Se calcula que existen cerca de 3 billones de árboles en el planeta, mientras que la Vía Láctea contiene entre 100.000 y 400.000 millones de estrellas."
+            },
+            {
+                categoria: "Psicología",
+                titulo: "El efecto 'Tetris' post-partida",
+                texto: "Jugar a videojuegos como Tetris tras presenciar una situación traumática ayuda a reducir drásticamente la frecuencia de flashbacks en el cerebro humano."
+            }
+        ];
+
+        let indiceActual = 0;
+
+        function cargarCuriosidad(index) {
+            const item = baseDeDatosCuriosidades[index];
+            
+            const card = document.getElementById('card-curiosidad');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                document.getElementById('categoria-tag').innerText = item.categoria;
+                document.getElementById('contador-id').innerText = `#0${index + 1}`;
+                document.getElementById('titulo-curiosidad').innerText = item.titulo;
+                document.getElementById('texto-curiosidad').innerText = item.texto;
+
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 150);
+        }
+
+        function siguienteCuriosidad() {
+            indiceActual = (indiceActual + 1) % baseDeDatosCuriosidades.length;
+            cargarCuriosidad(indiceActual);
+        }
+
+        window.onload = () => {
+            const horaActual = new Date().getHours();
+            indiceActual = horaActual % baseDeDatosCuriosidades.length;
+            cargarCuriosidad(indiceActual);
+        };
+    </script>
+</body>
+</html>
